@@ -17,6 +17,14 @@ export default {
 
 <style lang="scss">
 .card{
+    display: inline-block;
     margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 7px;
+    div{
+        line-height: 1.5;
+    }
+    
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Stocks</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/fun/">Stocks</router-link> |
+      <router-link to="/fun/gifPage">GIF</router-link> |
+      <router-link to="/fun/about">About</router-link>
+    
     </div>
+    <hr>
     <router-view/>
   </div>
 </template>
@@ -17,6 +20,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: rgb(240, 240, 240);
+  min-height: 100vh;
 }
 
 #nav {
@@ -32,7 +37,16 @@
   color: #42b983;
 }
 .button{
-  border: 2px solid #000;
   padding: 15px;
+  cursor: pointer;
+  display: inline-block;
+  background: #42b983;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: box-shadow .1s;
+  &:hover{
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.22);
+  }
 }
 </style>

@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Stocks from '../views/Stocks.vue'
+import gifPage from '../views/gifPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/fun/',
     name: 'Stocks',
     component: Stocks
   },
   {
-    path: '/about',
+    path: '/fun/gifPage',
+    name: 'gifPage',
+    component: gifPage
+  },
+  {
+    path: '/fun/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

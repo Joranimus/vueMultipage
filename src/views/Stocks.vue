@@ -1,13 +1,16 @@
 <template>
   <div class="stocks">
     <div class="button" @click="getData">get data</div>
-    <stockCard v-for="item in stock" :key="item.meta.symbol"
-    v-bind:symbol="item.meta.symbol"
-    v-bind:currency="item.meta.currency"
-    v-bind:open="item.values[0].open"
-    v-bind:close="item.values[0].close"
-    v-bind:volume="item.values[0].volume"
-    />
+    <div v-if="stock">
+      <stockCard v-for="item in stock" :key="item.meta.symbol"
+        v-bind:symbol="item.meta.symbol"
+        v-bind:currency="item.meta.currency"
+        v-bind:open="item.values[0].open"
+        v-bind:close="item.values[0].close"
+        v-bind:volume="item.values[0].volume"
+      />
+    </div>
+    
 
     
   </div>
@@ -47,7 +50,7 @@ export default {
   },
   methods:{
     getData(){
-      axios.get('https://api.twelvedata.com/time_series?symbol=AAPL,MSFT,SBUX&interval=1h&apikey=94319ea3f0d54c3ea662fb37be4aaaa4')
+      axios.get('https://api.twelvedata.com/time_series?symbol=AAPL,MSFT,SBUX&interval=1min&apikey=94319ea3f0d54c3ea662fb37be4aaaa4')
         .then(response => {
           this.stock = response.data
           console.log(this.stock);
@@ -61,9 +64,11 @@ export default {
         });
     }
   }
-
-
-
-
 }
 </script>
+
+<style lang="scss">
+.stocks{
+  padding: 20px;
+}
+</style>
